@@ -1314,7 +1314,8 @@ code {
 
 .search-input {
   height: 36px;
-  min-width: 210px;
+  min-width: 268px;
+  max-width: 100%;
   padding: 0 12px;
   border-radius: 10px;
   border: 1px solid var(--border-subtle);
@@ -1551,7 +1552,7 @@ code {
 /* Toast Notification */
 .toast {
   position: fixed;
-  bottom: 24px;
+  bottom: 76px;
   right: 24px;
   z-index: 1200;
   background: #0f172a;
@@ -1577,7 +1578,7 @@ code {
 .back-top {
   position: fixed;
   bottom: 24px;
-  left: 24px;
+  right: 24px;
   z-index: 800;
   width: 42px;
   height: 42px;
