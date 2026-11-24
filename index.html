@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>最强 AI Agent：Google Antigravity 完全攻略（2026.11 精校中文版）</title>
+  <meta name="description" content="全面拆解 Google Antigravity 2.0、Gemini 4 Neon、黑五半价 Google AI Pro、Colab 96GB G4 云端算力、月度 API 额度领取、Claude 5.5 同屏切换、手机远程操控方案与避坑速查表，附 3 套可直接复制的实战提示词。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <!-- Sticky Glass Navbar -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-icon" aria-hidden="true">AG</span>
+        <span>Google Antigravity 完全攻略</span>
+        <span class="brand-tag">2026.11 精校中文版</span>
+      </a>
+      <div class="header-actions">
+        <a class="nav-pill" href="#pricing">套餐定价</a>
+        <a class="nav-pill" href="#api-credits">领 API 额度</a>
+        <a class="nav-pill" href="#cheatsheet">选型速查表</a>
+        <a class="nav-pill" href="#prompts">实战提示词</a>
+        <button class="icon-btn mobile-toc-btn" id="mobileTocBtn" type="button" aria-label="打开目录">☰ 目录</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色模式">🌙 深色</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-meta">
+        <span class="edition-badge"><span class="dot"></span>2026 年 11 月 23 日最新实测情报</span>
+        <span class="meta-chip">全 6 章 · 精校中文版</span>
+        <span class="meta-chip">预计阅读 12 分钟</span>
+        <span class="meta-chip">本文实证：由 Gemini 4 Neon (XHigh) 查证撰稿</span>
+      </div>
+
+      <h1>最强 AI Agent：<span class="gradient-text">Google Antigravity</span> 完全攻略</h1>
+
+      <p class="hero-subtitle">
+        从代码编辑器蜕变为 5 大入口联动的「自主操作系统」，叠加黑五半价 <strong>Google AI Pro（折合月均约 1,208 日元）</strong>，一套订阅直接打通 <strong>Gemini 4 Neon</strong>、免加价 <strong>Claude 5.5</strong>、<strong>Google Flow</strong> 影音工作室、<strong>96GB 云端 Colab GPU</strong>、<strong>YouTube Premium Lite</strong> 与 <strong>5TB 存储</strong>。这一篇把最新特性、省钱攻略、手机遥控、封号红线与 3 套即拿即用提示词彻底讲透。
+      </p>
+
+      <div class="hero-cta-row">
+        <a class="btn btn-primary" href="#intro">开始阅读正文 →</a>
+        <a class="btn btn-secondary" href="#cheatsheet">⚡ 直达选型速查表</a>
+        <a class="btn btn-secondary" href="#prompts">📋 复制 3 套实战提示词</a>
+      </div>
+
+      <!-- 4 Key KPI Bento Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">黑五 Pro 首年特惠</div>
+          <div class="kpi-value accent-emerald">¥1,208<span style="font-size:0.85rem;font-weight:600"> 日元/月</span></div>
+          <div class="kpi-desc">年付半价 14,500 日元；扣除 YouTube 780 日元后，实际差价仅 428 日元（一杯咖啡钱）</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">专属框架增幅 (SWE-sweep)</div>
+          <div class="kpi-value accent-blue">3.0×</div>
+          <div class="kpi-desc">同一套 Gemini 4 Neon 权重，从简易框架 12.8% 跃升至 Antigravity 原生 39.0%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">隐藏算力福利 (Colab)</div>
+          <div class="kpi-value accent-cyan">96GB G4</div>
+          <div class="kpi-desc">Pro 每月 200 单元 / Ultra 2,000 单元，低配笔记本也能云端跑 1080p 有声 AI 视频</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">一揽子生态整合</div>
+          <div class="kpi-value accent-indigo">5 合 1</div>
+          <div class="kpi-desc">Neon + 同屏 Claude 5.5 + Flow 1,000 积分 + YouTube + 5TB 家庭共享 + 月赠 $10 API</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="toc-backdrop" id="tocBackdrop"></div>
+
+  <!-- 2-Column Content Layout -->
+  <div class="layout">
+    <!-- Left Sticky TOC Sidebar -->
+    <aside class="toc-sidebar" id="tocSidebar" aria-label="文章目录">
+      <div class="toc-card">
+        <div class="toc-title">目录导航</div>
+        <ul class="toc-list">
+          <li><a class="toc-link active" href="#intro">导言：为什么全家桶如此离谱</a></li>
+          <li><a class="toc-link" href="#ch1">第 1 章：为什么是最强 AI Agent</a></li>
+          <li><a class="toc-link toc-sub" href="#ch1-5entries">5 大入口联动的自主 OS</a></li>
+          <li><a class="toc-link toc-sub" href="#ch1-nov">11 月重磅更新连发</a></li>
+          <li><a class="toc-link" href="#ch2">第 2 章：黑五半价与全权益拆解</a></li>
+          <li><a class="toc-link toc-sub" href="#pricing">日本区全套餐对比表</a></li>
+          <li><a class="toc-link toc-sub" href="#colab-gpu">Colab 96GB G4 隐藏福利</a></li>
+          <li><a class="toc-link toc-sub" href="#api-credits">月领 $10~$100 API 3 步清单</a></li>
+          <li><a class="toc-link" href="#ch3">第 3 章：Neon 实力与 Claude 5.5</a></li>
+          <li><a class="toc-link toc-sub" href="#ch3-orchestrator">Orchestrator 双引擎协同</a></li>
+          <li><a class="toc-link toc-sub" href="#ch3-writing">写作能力与同屏 Claude 5.5</a></li>
+          <li><a class="toc-link" href="#ch4">第 4 章：手机远程操控两大路线</a></li>
+          <li><a class="toc-link" href="#ch5">第 5 章：短板、封号红线与速查表</a></li>
+          <li><a class="toc-link toc-sub" href="#tos-ban">协议第 6 条封号边界</a></li>
+          <li><a class="toc-link toc-sub" href="#cheatsheet">⚡ 模型与功能选型速查表</a></li>
+          <li><a class="toc-link" href="#ch6">第 6 章：3 套提示词与 10 分钟上手</a></li>
+          <li><a class="toc-link toc-sub" href="#prompts">📋 可复制实战提示词 3 选</a></li>
+          <li><a class="toc-link toc-sub" href="#quickstart">今日 10 分钟 3 步打卡</a></li>
+        </ul>
+        <div class="toc-footer">
+          <div class="toc-meta-row">
+            <span>阅读进度</span>
+            <strong id="tocProgressPct">0%</strong>
+          </div>
+          <div class="toc-meta-row">
+            <span>Markdown 源文</span>
+            <span><a href="docs/guide-zh.md" target="_blank" rel="noopener">中文版</a> · <a href="docs/source-ja.md" target="_blank" rel="noopener">日文原稿</a></span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Editorial Content -->
+    <main class="article-content">
+      <!-- INTRO -->
+      <section class="chapter-section" id="intro">
+        <div class="chapter-kicker">导言 · PREFACE</div>
+        <h2>Google 这次真的认真了：算完这笔账，简直让人合不拢嘴</h2>
+
+        <p>
+          先暂停一下手头的事——这周把 AI 圈的新闻和价目表摆在一起对照，Google 的诚意实在强到离谱。
+          正在进行的 <strong>2026 黑色星期五促销</strong> 中，「<strong>Google AI Pro</strong>」年付方案直接给出了最高半价：<strong>14,500 日元/年（含税）</strong>。
+          除以 12 个月，折合下来<strong>每月仅约 1,208 日元</strong>。
+        </p>
+
+        <p>仅仅这一份订阅，到底打包进了哪些东西？全列出来几乎让人大脑过载：</p>
+
+        <ul class="styled-list">
+          <li><strong>Google Antigravity 本体</strong>：直接驱动拿下多项全球第一的新主力模型「<strong>Gemini 4 Neon</strong>」</li>
+          <li><strong>免额外付费调用竞品旗舰</strong>：在同一个 Antigravity 界面内，直接使用 Anthropic 最强梯队「<strong>Claude Opus 5.5</strong>」与「<strong>Claude Sonnet 5.5</strong>」</li>
+          <li><strong>影音创作 + 云端算力双引擎</strong>：可一站生成视频、图片与音乐的「<strong>Google Flow</strong>」每月 1,000 积分 ＋ 低配电脑也能借用云端 GPU 做视频的「<strong>Google Colab</strong>」每月 200 算力单元</li>
+          <li><strong>日常娱乐刚需</strong>：自带单买就要 780 日元/月的「<strong>YouTube Premium Lite</strong>」，普通视频免广告观看</li>
+          <li><strong>云盘与办公套件</strong>：可与最多 5 位家人共享的 <strong>5TB 存储空间</strong>，以及 Gmail / 文档 / 表格内的原生 Gemini 深度集成</li>
+        </ul>
+
+        <!-- Coffee Math Breakdown Visual -->
+        <div class="math-breakdown">
+          <div class="math-header">
+            <span class="math-title">☕ 一杯咖啡的差价算账（黑五 Google AI Pro 月均约 1,208 日元）</span>
+            <span class="math-total">净差额仅 428 日元 / 月</span>
+          </div>
+          <div class="stacked-bar" role="img" aria-label="YouTube Premium Lite 占 780 日元，剩余 428 日元覆盖全部 AI 与 5TB 权益">
+            <div class="bar-seg-yt">YouTube Premium Lite · 780 日元 (65%)</div>
+            <div class="bar-seg-coffee">仅差 428 日元 (35%)</div>
+          </div>
+          <div class="math-legend">
+            <span><span class="legend-dot" style="background:#f97316"></span>日常必用的免广告视频权益（单买 780 日元/月）</span>
+            <span><span class="legend-dot" style="background:#2563eb"></span>一杯咖啡差价 = 5TB + Neon + Claude 5.5 + Flow + Colab 96GB GPU</span>
+          </div>
+        </div>
+
+        <p>
+          越是长期重度使用 AI 的人，之前多半都憋着这几股郁闷：ChatGPT、Claude、Gemini、视频 AI 轮流交费，每月订阅轻松破万日元；工具散落在七八个 App 里，一离开电脑桌活就彻底停摆；再看 Antigravity，总觉得“那不是给程序员用的高门槛编辑器吗？”。
+        </p>
+
+        <p>
+          但系统跟完 2026 年 11 月这一轮密集更新与 Gemini 4 Neon 落地之后，结论已经非常清晰：<strong>当前 AI Agent 时代的主角，已经毫无悬念地站到了 Google Antigravity 这边。</strong>
+        </p>
+
+        <div class="callout info">
+          <div class="callout-title">📌 开篇先说清楚：不画大饼，只讲实测与一手事实</div>
+          <p>
+            本文绝不鼓吹“装上就能全自动躺赚”。它同样存在<strong>速率限制（配额墙）</strong>，接入第三方工具也有明确的<strong>条款封号红线</strong>。
+            但更具说服力的是：<strong>你此刻读到的这篇约 12,000 字长文，本身就是基于 Google Antigravity 上的 Gemini 4 Neon（思考等级 XHigh），一边核查一手资料一边写成的实证样本。</strong>
+            全文基于 <strong>2026 年 11 月 23 日</strong> 的最新情报，将本体功能、黑五账单、Neon 实测、手机遥控、风险避坑与 3 套即拷即用提示词一次讲透。
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 1 -->
+      <section class="chapter-section" id="ch1">
+        <div class="chapter-kicker">第 1 章 · CHAPTER 01</div>
+        <h2>为什么现在「Google Antigravity」是最强 AI Agent？</h2>
+
+        <h3 id="ch1-5entries">告别“代码编辑器”旧印象：5 大入口联动的自主操作系统</h3>
+        <p>
+          直奔主题：如果你对 Google Antigravity 的印象还停留在“魔改 VS Code 的 AI 代码编辑器”，那已经是半年前的老黄历了。
+          自 2026 年 5 月 Google I/O 发布 <strong>Antigravity 2.0</strong> 起，它的底层设计哲学就彻底转向：<strong>共享同一套大脑、权限体系、Skills 与 MCP 配置，同时打通 5 个入口协同运转的综合自主平台。</strong>
+        </p>
+
+        <div class="card-grid-2">
+          <div class="feature-card">
+            <div class="feature-card-head">
+              <span class="feature-card-title">1. Antigravity App</span>
+              <span class="feature-badge">桌面司令台</span>
+            </div>
+            <p>面向多任务并行调度打造的独立桌面客户端，像总指挥官一样同时监看多个 Agent 并行推进，支持个人账户界面一键切换。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-head">
+              <span class="feature-card-title">2. Antigravity CLI</span>
+              <span class="feature-badge">终端高速版</span>
+            </div>
+            <p>直接通过 <button class="cmd-chip" type="button" data-copy="agy">agy</button> 在命令行极速执行任务，天然支持脚本自动化与后台常驻守护进程（Daemon）。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-head">
+              <span class="feature-card-title">3. 官方 IDE 扩展 &amp; Antigravity IDE</span>
+              <span class="feature-badge">开发集成</span>
+            </div>
+            <p>原生无缝接入 VS Code、JetBrains 全家桶、Xcode、Zed、Android Studio，习惯一体化写代码的开发者照旧丝滑。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-head">
+              <span class="feature-card-title">4. Antigravity Python SDK</span>
+              <span class="feature-badge">代码嵌入</span>
+            </div>
+            <p>执行 <button class="cmd-chip" type="button" data-copy="pip install google-antigravity">pip install google-antigravity</button>，即可将 Antigravity 的 Agent 能力直接嵌入自己的 Python 业务程序。</p>
+          </div>
+        </div>
+
+        <div class="feature-card" style="margin-top:-8px;margin-bottom:22px;">
+          <div class="feature-card-head">
+            <span class="feature-card-title">5. ACP（Agent Client Protocol）开放连接层</span>
+            <span class="feature-badge emerald">外部遥控标准</span>
+          </div>
+          <p>通过官方未修改二进制程序 <button class="cmd-chip" type="button" data-copy="antigravity-acp">antigravity-acp</button>，以标准协议对接 T3 Code 等第三方控制台，为多工具聚合和手机端远程操控打开通路。</p>
+        </div>
+
+        <p>
+          更贴心的是，自 <strong>v2.30.0</strong> 起，Antigravity App 为个人账号加入了「<strong>Knowledge Work（知识工作）</strong>」与「<strong>Software Engineering（软件工程）</strong>」双布局切换。
+          不写代码的撰稿人、策划或研究岗，完全可以一键隐藏 Git 与终端窗口，只留下清爽的「对话 + 文档 + 交付物」界面；在侧栏 PDF 阅读器中划选一段文字，点一下 <strong>Quote</strong> 或 <strong>Comment</strong>，就能像批注文档一样精准派发修改指令。
+        </p>
+
+        <h3 id="ch1-nov">2026 年 11 月重磅更新连发：/btw 晋升、内置浏览器、语音与四阶多智能体</h3>
+        <p>
+          2026 年 11 月这一波功能更新密度极其惊人。社媒时间线上讨论度炸裂的头号明星，正是侧边追问功能 <button class="cmd-chip" type="button" data-copy="/btw">/btw</button> 的重磅升级。
+        </p>
+
+        <div class="callout success">
+          <div class="callout-title">🔥 神级效率特性：/btw 侧边分支（Fork）与转正合并（Promote）</div>
+          <p>
+            当 AI 正在埋头推进一项大任务时，你突然想查某个历史规格，或者顺手试个备选思路，以前要么硬生生打断主线，要么把上下文聊脏。
+            现在只要输入 <code>/btw</code>，右侧就会瞬间分叉出一个<strong>继承当前全部上下文的新标签页</strong>，主线任务一毫秒不中断。
+            它不是空口瞎聊，而是能真正检索、读取本地文件核实后给你答复，且完全不污染主对话记录。
+            最新更新更进一步：如果侧边试出来的方案极佳，可以直接点击 <strong>Insert into main conversation</strong> 汇入主线，甚至直接<strong>晋升（Promote）</strong>成新的主对话——就像做饭时在旁边的灶眼调一锅试味酱汁，尝着绝了直接倒进主锅。
+          </p>
+        </div>
+
+        <p>不仅如此，下面这些能力全部<strong>开箱即用、无需满世界找插件</strong>（点击紫色指令芯片即可一键复制）：</p>
+
+        <ul class="styled-list">
+          <li><strong>内置浏览器</strong> <button class="cmd-chip" type="button" data-copy="/browser">/browser</button>：无需另装 Chrome，直接内嵌在应用右侧。支持多标签并行验屏与自动截图；遇到需要登录验证的界面，还能临时把控制权交给人手，登完再交回 Agent 继续跑。</li>
+          <li><strong>OpenSSH 远程直连（v2.33.0+）</strong>：打开专属窗口直连远程 Linux 服务器，让 Agent 直接常驻在云端或宿主机上运行任务。</li>
+          <li><strong>Voice Mode（Gemini Live 语音交互）</strong>：点击麦克风图标或在 CLI 按 <code>F6</code>，像打电话一样开口下指令、随时纠偏甚至口头审批（涉及高危操作仍强制要求在界面手动点击确认，保证安全）。</li>
+          <li><strong>四阶多智能体协作体系</strong>：后台轻活交给 <strong>Subagent（子智能体）</strong>；需要并行分工 + 质检员 <code>@verifier</code> 验收就用 <button class="cmd-chip" type="button" data-copy="/swarm">/swarm</button>（<strong>免费版也可用！</strong>）；硬骨头 Bug 上 <button class="cmd-chip" type="button" data-copy="/boost">/boost</button>；跨天大型架构重构启用带审计闸门的 <button class="cmd-chip" type="button" data-copy="/teamwork">/teamwork</button>。</li>
+          <li><strong>长程自主与定时调度</strong>：不达目标不收工的 <button class="cmd-chip" type="button" data-copy="/goal">/goal</button>、逐题反问厘清需求的 <button class="cmd-chip" type="button" data-copy="/grill-me">/grill-me</button>、用 Python 代码编排的 <button class="cmd-chip" type="button" data-copy="/run-workflow">/run-workflow</button>，以及定时巡检的 <button class="cmd-chip" type="button" data-copy="/schedule">/schedule</button> 与 <strong>Automations</strong>。</li>
+        </ul>
+
+        <div class="lead-quote">
+          官方博客里放出的演示极具代表性：Neon × <code>/swarm</code> 从零写出双人联机游戏，随后 Agent 亲自打开内置浏览器当起 2 号玩家陪你对打；还有用一张图片靠 Swarm 生成「超 10 万单元格、50 万条公式的电子表格 3D 深度图」，以及单凭一张静图让 Neon 自主拉取 Depth Anything V2 并用 Three.js 渲染立体场景。<br />
+          <strong>上一代 AI 是“叫它削零件才动一下的学徒”，今天的 Antigravity 已经是“设计、试车、质检全套团队闭环的现场总工”。</strong>
+        </div>
+      </section>
+
+      <!-- CHAPTER 2 -->
+      <section class="chapter-section" id="ch2">
+        <div class="chapter-kicker">第 2 章 · CHAPTER 02</div>
+        <h2>黑五折合月均 1,208 日元！全套餐定价与 Flow · YouTube · 5TB · Colab 全家桶</h2>
+
+        <h3>2026 年 11 月黑五促销：Google AI Pro 最高半价细则</h3>
+        <p>
+          接下来把大家最关心的账单算得明明白白。Google Antigravity 并不单独卖会员，而是直接挂载在个人 <strong>Google AI 套餐（Google One 统一会员）</strong> 之上。
+          而 2026 年 11 月的头号爆点，就是 <strong>2026 黑色星期五特惠</strong>：原价月付 2,900 日元 / 年付 29,000 日元（含税）的「<strong>Google AI Pro（含 5TB）</strong>」，年付方案直降最高 50%，<strong>首年仅 14,500 日元（含税）</strong>。折合每月约 <strong>1,208 日元</strong>，比按月缴费（全年 34,800 日元）直接省下 <strong>20,300 日元</strong>。
+        </p>
+
+        <div class="callout warning">
+          <div class="callout-title">🗓️ 关键时间节点与条件提醒（一手核实）</div>
+          <ul class="styled-list" style="margin:6px 0 0;">
+            <li><strong>老用户抢先购</strong>：针对已有 Google One / Google AI 订阅者，约自 11 月 20 日启动，官方公告截止至 <strong>2026 年 11 月 26 日（周四）</strong>。</li>
+            <li><strong>月付转年付实测可行</strong>：已有不少用户反馈从月付切换至年付成功触发半价，且此前多付的部分获得了按比例退款或抵扣。</li>
+            <li><strong>新用户正式黑五场</strong>：预计在抢先购结束后，于 <strong>11 月 27 日前后</strong> 的正式黑五档期面向新户铺开折扣。</li>
+            <li><strong>排除项与续费提醒</strong>：最顶配 <strong>Google AI Ultra</strong> 及单月付费方案据报道不参与本次直降；50% 折扣仅限首年 12 个月，<strong>第 2 年起将按常规年价 29,000 日元自动续费</strong>。不同账号历史显示的优惠不同，付款前请务必在自己的 Google One 管理页核对最终结账金额。</li>
+          </ul>
+        </div>
+
+        <h3 id="pricing">日本区全套餐对比表（从 Free 到 Ultra 20x 一目了然）</h3>
+
+        <div class="pricing-controls">
+          <div class="segmented-toggle" role="tablist" aria-label="切换定价视图">
+            <button class="seg-btn active" type="button" data-pricing-mode="bf">🔥 黑五首年特惠视图</button>
+            <button class="seg-btn" type="button" data-pricing-mode="regular">常规原价视图</button>
+          </div>
+          <span id="pricingModeHint" style="font-size:0.82rem;color:var(--text-muted);">当前显示：2026 黑五首年特惠价（Ultra 与单月付不参与直降）</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>套餐名称</th>
+                <th>价格（日本区含税）</th>
+                <th>存储与核心模型</th>
+                <th>Flow / Colab / YouTube 附带权益</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>免费版 (Free)</strong></td>
+                <td class="price-cell">0 日元</td>
+                <td>Gemini 3.8 Flash、Tab 补全不限量、CLI、每周限额 <code>/swarm</code><br /><span style="font-size:0.78rem;color:var(--rose);">※免费档 Claude 4.6 系与 GPT-OSS-120b 预定 2026/11/30 终止</span></td>
+                <td>Flow 每日 50 免费积分；零门槛体验核心操控感</td>
+              </tr>
+              <tr>
+                <td><strong>Google AI Plus</strong></td>
+                <td class="price-cell">725 日元/月</td>
+                <td>400GB 存储；<strong>不支持</strong> Antigravity 内的 Neon 与 Claude 5.5</td>
+                <td>Flow 月 200 积分（若冲着 Antigravity 来，建议直接上 Pro）</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>
+                  <strong>Google AI Pro</strong>
+                  <div style="margin-top:4px;"><span class="feature-badge emerald">性价比封神</span></div>
+                </td>
+                <td class="price-cell">
+                  <div id="proPriceDisplay">
+                    <span class="strike-price">29,000日元/年</span>14,500 日元/年
+                    <span class="price-sub">折合月均约 1,208 日元（首年最高半价）</span>
+                  </div>
+                  <div id="proPriceNote" style="font-size:0.74rem;font-weight:500;color:var(--text-muted);margin-top:4px;">较按月付费（年 34,800 日元）直省 20,300 日元</div>
+                </td>
+                <td><strong>5TB（最多 5 人家庭共享）</strong>；解锁 <strong>Neon / Argon / Hydrogen / Orchestrator</strong>；付费正式合约解锁 <strong>Claude Opus 5.5 &amp; Sonnet 5.5</strong></td>
+                <td>Flow <strong>1,000 积分/月</strong> ＋ Colab <strong>200 单元/月</strong> ＋ <strong>YouTube Premium Lite</strong> ＋ API <strong>$10/月</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Google AI Ultra 5x</strong></td>
+                <td class="price-cell">14,500 日元/月</td>
+                <td>20TB；约 Pro 的 <strong>5 倍配额</strong>；解锁旗舰 <strong>Gemini 4 Carbon</strong></td>
+                <td>Flow 10,000 积分档 ＋ Colab 高阶 GPU 枠 ＋ <strong>YouTube Premium 家庭版（最多 5 人）</strong> ＋ API <strong>$40/月</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Google AI Ultra 20x</strong></td>
+                <td class="price-cell">32,000 日元/月</td>
+                <td>30TB；约 Pro 的 <strong>20 倍优先配额</strong>；Carbon 全速狂飙</td>
+                <td>Flow 25,000 积分档 ＋ Colab <strong>2,000 单元/月</strong>顶配算力 ＋ <strong>YouTube Premium 家庭版</strong> ＋ API <strong>$100/月</strong></td>
+              </tr>
+              <tr>
+                <td><strong>企业版 (Gemini Enterprise)</strong></td>
+                <td class="price-cell">$30+/席位/月<span class="price-sub" style="color:var(--text-muted);">或按量计费</span></td>
+                <td>企业级数据治理、审计日志、数据绝不用于训练保障</td>
+                <td>面向团队/大企业合规部署（不享个人 Google AI 套餐黑五及消费级权益）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>远超“赠品”范畴的全家桶权益：Flow、YouTube、5TB 与 Workspace</h3>
+        <p>
+          其他厂商每月 $20（约 3,000 日元）的 AI 会员，通常只给一个聊天框加一套开发工具。Google AI Pro / Ultra 真正犯规的地方在于：<strong>光靠附带权益就能把会员费赚回来。</strong>
+        </p>
+
+        <div class="card-grid-2">
+          <div class="feature-card">
+            <div class="feature-card-head">
+              <span class="feature-card-title">🎬 Google Flow &amp; Flow Music</span>
+              <span class="feature-badge">1,000~25,000 积分/月</span>
+            </div>
+            <p>一站整合视频生成 <strong>Veo（Veo 3.1 等）</strong>、图像生成 <strong>Nano Banana / ImageFX</strong>、已并入的 <strong>Whisk</strong>，以及搭载 <strong>Lyria 3 Pro</strong> 的音乐/MV 工具 <strong>Flow Music</strong>。免费每天 50 积分；Pro 每月 1,000 积分；Ultra 高达 10,000~25,000 积分（支持 4K 超分与商用去水印等）。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-head">
+              <span class="feature-card-title">▶️ YouTube 免广告权益</span>
+              <span class="feature-badge rose">单买 780 日元+/月</span>
+            </div>
+            <p><strong>Pro</strong> 含个人版 <strong>YouTube Premium Lite</strong>（普通讲解/游戏等常规视频免广告，且已升级支持常规视频后台播放与离线缓存；不含音乐、Shorts 与 YouTube Music）。<strong>Ultra（5x/20x）</strong>在日本区已升级为<strong>YouTube Premium 家庭方案</strong>，最多 5 位家人全功能含音乐免广告。</p>
+          </div>
+        </div>
+
+        <p>此外，Google AI Pro 还一并打包了：<strong>5TB 云端存储</strong>（Drive / Gmail / 相册共用，支持最多 5 人家庭共享）、<strong>Workspace 原生 Gemini</strong>（Gmail、Docs、Sheets、Slides、Vids、Meet 内直出）、<strong>Deep Research &amp; 增强版 Gemini Notebook（原 NotebookLM）</strong>、每月 $10 等值 Google AI Studio / Cloud 额度，以及 <strong>Google Home Premium (Standard)</strong> 与 <strong>Google Health Premium（原 Fitbit Premium）</strong>。</p>
+
+        <h3 id="colab-gpu">隐藏神级福利：低配电脑也能做 AI 视频！96GB 云端 GPU「Google Colab」</h3>
+        <p>
+          有一个极易被忽略、但实测让人起鸡皮疙瘩的权益必须单独拿出来讲：很多朋友想玩本地视频生成或 3D 制作，却被“家里只有普通轻薄本、买不起显卡”劝退。
+          自 2026 年秋季更新起，<strong>Google AI Pro 每月自动附赠 200 算力单元（约值 $20，有效期 90 天）</strong>，而顶配 <strong>Ultra 每月更是狂送 2,000 算力单元</strong>！
+        </p>
+        <p>
+          而且在 Colab 上，你不仅能开常规 T4 或 A100，甚至能直接租用 NVIDIA Blackwell 架构怪兽卡——<strong>G4（RTX PRO 6000 Blackwell Server Edition，96GB 显存）</strong>！
+          来看一段在 X 和开发者社区刷屏的真实跑分实测：在 96GB 的 G4 实例上跑 ComfyUI + 开源视频模型 <strong>MiniMax H3（自带 32kHz 原生立体声音频）</strong>，通过首尾帧衔接生成 4 幕 1280×704 画面，再用 RealESRGAN 超分至 1920×1080，直接产出一支 <strong>45 秒、1080p、带完整音轨的连贯短片</strong>：
+        </p>
+
+        <div class="stat-strip">
+          <div class="stat-box">
+            <div class="stat-num">16m 07s</div>
+            <div class="stat-caption">4 幕视频生成总耗时<br />（第 1 幕 15s 用 6m14s，后 3 幕各 10s 约 3m16s~21s）</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">~6 分钟</div>
+            <div class="stat-caption">1080p 超分辨率耗时<br />（每 10 秒片段仅约 1 分 18 秒）</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">3.7~4.2</div>
+            <div class="stat-caption">单条算力单元消耗<br />（纯 GPU 约 3.7；含抽帧质检约 4.2）</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">45~470+ 条</div>
+            <div class="stat-caption">按月理论视频产能<br />（Pro 200 单元 45+ 条 / Ultra 470+ 条）</div>
+          </div>
+        </div>
+
+        <p style="font-size:0.84rem;color:var(--text-muted);margin-top:-10px;">※ 注：G4 每小时的算力单元消耗速率会随地区环境与时段浮动。</p>
+
+        <p>更酷的是，配合 Google 官方的 <button class="cmd-chip" type="button" data-copy="google-colab-cli">google-colab-cli</button> 与 <button class="cmd-chip" type="button" data-copy="comfy-mcp">comfy-mcp</button>，整条云端流水线可以直接由本地 Antigravity 全自动托管：</p>
+        <ul class="styled-list">
+          <li><strong>Step 1 启动云端怪兽卡</strong>：把 <code>google-colab-cli</code> 与 <code>comfy-mcp</code> 交给本地 Antigravity，自动拉起 96GB 显存 G4 运行时。</li>
+          <li><strong>Step 2 高速直拉模型权重</strong>：不要把大文件塞进 Google Drive，而是靠数据中心千兆宽带 + <code>aria2</code> 在几分钟内直接把 Comfy-Org 版 MiniMax-H3（约 44GB）和 <code>RealESRGAN_x2plus</code> 下载到临时磁盘。</li>
+          <li><strong>Step 3 隧道监工 + 完工即停</strong>：用 <code>colab ssh</code> 转发 <code>8188</code> 端口在本地看实时进度，每 10~15 秒首尾帧续写并超分；一旦出片立即执行 <button class="cmd-chip" type="button" data-copy="colab stop">colab stop</button> 停机止损，一滴算力都不浪费。</li>
+        </ul>
+        <p>当然，想要更省心的玩法，实拍感画面和配乐直接交给网页端 <strong>Google Flow</strong>，平时在 Antigravity 侧栏直接打开 <code>.ipynb</code> 笔记本、只在重负载环节把任务甩给 Colab，组合体验同样绝佳。不必花几万块给家里电脑配显卡，也不用不断在商业视频网站氪金买点数。</p>
+
+        <h3 id="api-credits">【必藏备忘录】不领白亏！每月 $10~$100 Gemini API 额度 3 步领取清单</h3>
+        <p>
+          绝大多数付费用户都没发现，白白放过了一笔真金白银：只要订阅了 Google AI Pro 或 Ultra，每月还附赠专属的 <strong>Google Cloud / Gemini API 开发者赠金</strong>：
+          <strong>Pro 每月 $10（约 1,500 日元）</strong>、<strong>Ultra 5x 每月 $40（约 6,000 日元）</strong>、<strong>Ultra 20x 每月 $100（约 15,000 日元）</strong>。用不完还能顺延滚存，<strong>每笔发放后有效长达 12 个月</strong>（仅限主账号本人，家庭共享成员不含）。
+        </p>
+
+        <div class="callout warning">
+          <div class="callout-title">⚠️ 最大坑点：干等不会自动到账！先吃透这 4 条安全机制</div>
+          <ul class="styled-list" style="margin:6px 0 0;">
+            <li><strong>首次需预充 800 日元（最低 $5）</strong>：结算账号必须保持正余额，这是激活每月赠金的门槛条件。</li>
+            <li><strong>你自己的 800 日元基本不会扣</strong>：只要余额大于 0，系统会<strong>优先消耗每月赠送的免费额度</strong>。</li>
+            <li><strong>自动充值保持「关闭」即可</strong>：完全不用担心后台偷偷持续扣卡。</li>
+            <li><strong>看到「$300 欢迎赠金」别慌</strong>：购买页右侧弹出的 $300 是 Google Cloud 首户免费试用提示，绝不是要收你 300 美元。</li>
+          </ul>
+        </div>
+
+        <!-- Interactive 3-Step Checklist -->
+        <div class="checklist-panel" data-checklist-group="api-credits">
+          <div class="checklist-head">
+            <span class="checklist-head-title">✅ 3 分钟搞定月度 API 额度绑定（勾选状态自动保存在本地浏览器）</span>
+            <span class="checklist-progress-badge">进度 0/3</span>
+          </div>
+
+          <label class="step-check-item">
+            <input class="step-checkbox" type="checkbox" data-step-id="api-1" />
+            <div class="step-body">
+              <div class="step-title">Step 1：在 Google AI Studio 预充 800 日元（最低 $5）</div>
+              <p class="step-desc">打开 Google AI Studio → 点击左侧栏底部「Billing（结算）」→ 点击「购买额度」输入 800 日元（$5 等值）完成支付 → 确认页面显示「有料 1 (Tier 1)」与「余额 ¥800」。</p>
+              <a class="step-link" href="https://aistudio.google.com/" target="_blank" rel="noopener">↗ 打开 aistudio.google.com</a>
+            </div>
+          </label>
+
+          <label class="step-check-item">
+            <input class="step-checkbox" type="checkbox" data-step-id="api-2" />
+            <div class="step-body">
+              <div class="step-title">Step 2：创建 Google Developer Program 个人档案</div>
+              <p class="step-desc">使用与 Google AI Pro/Ultra <strong>相同的 Google 账号</strong>登录下方页面 → 若弹出首次注册，只需填必填项「姓名*」（可用昵称，其余留空）→ 取消不需要的公开展示/邮件订阅勾选并点击创建 → 确认档案出现「<strong>Google Developer Program premium tier</strong>」徽章即成功。</p>
+              <a class="step-link" href="https://developers.google.com/profile/u/me" target="_blank" rel="noopener">↗ 打开 developers.google.com/profile/u/me</a>
+            </div>
+          </label>
+
+          <label class="step-check-item">
+            <input class="step-checkbox" type="checkbox" data-step-id="api-3" />
+            <div class="step-body">
+              <div class="step-title">Step 3：在 My Benefits 把月度赠金绑定到结算账号</div>
+              <p class="step-desc">打开开发者权益页，在左上区域找到「每月 $10/$40/$100 等值生成式 AI 与 Cloud 赠金」卡片 → 在「结算账号」下拉框选择 Step 1 充值过的账号（如 My Billing Account）→ 勾选「<strong>始终使用此结算账号</strong>」（此后每月自动入账）→ 点击「应用」完成！随后可在 AI Studio 结算页右上角「可用 GCP 赠金」看到余额（近期 AI Studio 结算菜单内也正逐步支持直接领取）。</p>
+              <a class="step-link" href="https://developers.google.com/program/my-benefits" target="_blank" rel="noopener">↗ 打开 developers.google.com/program/my-benefits</a>
+            </div>
+          </label>
+        </div>
+
+        <p>绑定完成后，这套免费 API 额度几乎能白嫖全套自动化创作：<strong>Imagen / Gemini Image</strong> 批量出封面与插图、<strong>Veo 3.1 / Veo 3.1 Fast</strong> 自动出 B-roll 空镜视频、<strong>Gemini TTS</strong> 稿件转旁白配音，以及接入 Colab / HyperFrames / Antigravity 的全自动脚本与视频分析批处理。（注：该赠金专用于 API / Google Cloud 按量计费，不可抵扣 Pro/Ultra 月费本身。）</p>
+      </section>
+
+      <!-- CHAPTER 3 -->
+      <section class="chapter-section" id="ch3">
+        <div class="chapter-kicker">第 3 章 · CHAPTER 03</div>
+        <h2>「Gemini 4 Neon」实测性能与写作能力，以及同屏直连 Claude 5.5 的降维打击</h2>
+
+        <h3>横扫榜单，放进 Antigravity 更直接暴涨 3 倍的「专属框架效应」</h3>
+        <p>
+          便宜归便宜，核心大脑到底行不行？挑大梁的是 Google DeepMind 于 <strong>2026 年 11 月 18 日</strong> 推出的全新主力模型——<strong>Gemini 4 Neon</strong>。
+          它精准卡位在顶级重炮「Carbon」和极速轻量「Hydrogen」正中央，在 Antigravity 里直接排在默认第一位，支持 <strong>Low / Medium（默认）/ High / Extra（CLI 中为 xhigh）</strong> 4 档思考深度调节。
+        </p>
+
+        <!-- Visual Benchmarks -->
+        <div class="bench-panel">
+          <div style="font-weight:700;font-size:0.96rem;margin-bottom:16px;color:var(--text-primary);">📊 官方与第三方权威基准一览（核心数字浓缩）</div>
+
+          <div class="bench-row">
+            <div class="bench-label-line">
+              <span class="bench-name">SWE-sweep · 同一套 Neon 权重（简易框架 mini-SWE）</span>
+              <span class="bench-val" style="color:var(--text-muted);">12.8%</span>
+            </div>
+            <div class="bench-track"><div class="bench-fill muted" style="width:12.8%;"></div></div>
+          </div>
+
+          <div class="bench-row">
+            <div class="bench-label-line">
+              <span class="bench-name">🔥 SWE-sweep · 同一套 Neon 权重（Google Antigravity 原生框架）</span>
+              <span class="bench-val" style="color:var(--emerald);">39.0%（约 3.05× 暴涨！）</span>
+            </div>
+            <div class="bench-track"><div class="bench-fill emerald" style="width:39.0%;"></div></div>
+          </div>
+
+          <div class="bench-row">
+            <div class="bench-label-line">
+              <span class="bench-name">Artificial Analysis Coding Agent Index（全球第 1）</span>
+              <span class="bench-val">58.6（xhigh 约 59.0）</span>
+            </div>
+            <div class="bench-track"><div class="bench-fill" style="width:59%;"></div></div>
+          </div>
+
+          <div class="bench-row">
+            <div class="bench-label-line">
+              <span class="bench-name">Zapier AutomationBench（全球第 1）</span>
+              <span class="bench-val">56.3%</span>
+            </div>
+            <div class="bench-track"><div class="bench-fill" style="width:56.3%;"></div></div>
+          </div>
+
+          <div class="bench-row">
+            <div class="bench-label-line">
+              <span class="bench-name">AutoBaxBench (Hard) · 安全与工程实测（SOTA）</span>
+              <span class="bench-val">76.0%</span>
+            </div>
+            <div class="bench-track"><div class="bench-fill" style="width:76%;"></div></div>
+          </div>
+
+          <div class="bench-row">
+            <div class="bench-label-line">
+              <span class="bench-name">CWE-bench v2（反超旗舰 Carbon 3.4 个百分点）</span>
+              <span class="bench-val">70.7%</span>
+            </div>
+            <div class="bench-track"><div class="bench-fill" style="width:70.7%;"></div></div>
+          </div>
+
+          <div class="bench-row">
+            <div class="bench-label-line">
+              <span class="bench-name">SEC-bench Pro（漏洞攻防实测）</span>
+              <span class="bench-val">90.5%</span>
+            </div>
+            <div class="bench-track"><div class="bench-fill" style="width:90.5%;"></div></div>
+          </div>
+        </div>
+
+        <ul class="styled-list">
+          <li><strong>Agent 实战稳居第一梯队顶端</strong>：除了 Coding Agent Index 与 AutomationBench 双双夺冠，它在 Artificial Analysis Intelligence Index（xhigh）拿下 <strong>61 分（综合第 3）</strong>，在偏重实务落地的 Vals Index 位列 <strong>第 2（反超 Claude Opus 5.5）</strong>，并在 Antigravity 内部评测中创下 Google 史上最低幻觉捏造率。</li>
+          <li><strong>极致性价比定价</strong>：在逼近顶配 Carbon 智能的同时，标准 High 档的单任务成本比 Carbon 低约 <strong>32%</strong>。API 价格为输入 <strong>$3.00（约 450 日元）/ 百万 Token</strong>、输出 <strong>$15.00（约 2,250 日元）/ 百万 Token</strong>，缓存输入更享 95% 折扣仅 <strong>$0.15（约 22.5 日元）</strong>（对比参考：Claude Opus 5.5 标准 API 位于输入 $4.00 / 输出 $20.00 档位）。</li>
+          <li><strong>最震撼的「框架放大效应（Harness Effect）」</strong>：一模一样的 Neon 参数权重，放在简易脚手架 <code>mini-SWE</code> 里只考 <code>12.8%</code>，一放进针对工具调用和文件管理深度打磨的 Antigravity 原生环境，得分瞬间拉升至 <code>39.0%</code>——<strong>直接翻了 3 倍！</strong>这足以证明「Neon × Antigravity」本身就是一套互相成就的系统工程。</li>
+        </ul>
+
+        <h3 id="ch3-orchestrator">Orchestrator 双引擎自动编排：Neon 管设计，Hydrogen 狂飙落地</h3>
+        <p>
+          Antigravity 内置的 <strong>Orchestrator（编排器）</strong>更是省心又省配额的神设计：在同一条对话里，系统会自动让大脑担当 <strong>Planner（规划者）</strong> 和执行担当 <strong>Executor（执行者）</strong> 无缝交接棒：
+        </p>
+
+        <div class="pipeline">
+          <div class="pipe-step">
+            <div class="pipe-num">STEP 01 · PLANNER</div>
+            <div class="pipe-role">Neon 全局勘察设计</div>
+            <p class="pipe-desc">默认由 Neon 以只读方式摸清项目全貌，起草清晰稳健的架构与修改方案。</p>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">STEP 02 · EXECUTOR</div>
+            <div class="pipe-role">Hydrogen 极速施工</div>
+            <p class="pipe-desc">自动交棒给极速轻量的 Hydrogen，一口气完成代码改写、构建编译与单元测试。</p>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">STEP 03 · AUTO-HEAL</div>
+            <div class="pipe-role">连错 2 次自动回溯</div>
+            <p class="pipe-desc">一旦遇到测试连续 2 次失败等意外情况，立刻自动交回 Neon 诊断修补计划再重启。</p>
+          </div>
+          <div class="pipe-step">
+            <div class="pipe-num">STEP 04 · REVIEW</div>
+            <div class="pipe-role">Neon 终审验收交付</div>
+            <p class="pipe-desc">全流程完工后回到 Neon 做最终代码与质量评审，零手动切模型、配额耐用度大幅拉长。</p>
+          </div>
+        </div>
+
+        <p>在 Pro 和 Ultra 桌面端中，你还可以完全自定义双引擎组合：Planner 可选 <code>Neon / Carbon (Ultra) / Argon / Claude Opus 5.5</code>，Executor 可选 <code>Hydrogen / Claude Sonnet 5.5</code>。</p>
+
+        <h3 id="ch3-writing">大家最关心的“文章功力”实测，以及同屏白嫖 Claude Opus 5.5 的绝杀</h3>
+        <p>
+          如果过去你觉得 Gemini 写东西“逻辑在线但语感发硬”，摸过 Neon 之后大概率会彻底改观。Google 官方强调它具备「自然直接的表达质感」，在长文创作场景里真正好用的是这三板斧：
+        </p>
+
+        <ul class="styled-list">
+          <li><strong>碾压级的长程记忆</strong>：API 直连最高支持 <strong>100 万 Token</strong>，在 Antigravity 内也可稳定持有最高 <strong>512K Token</strong>。把厚厚的 PDF 资料、过往样文和文风规范全塞进去，写到一万二千字结尾依然不跑偏、不散架。</li>
+          <li><strong>克制不胡编 + 出色转译力</strong>：能够老老实实守住“已核实一手信息”与“未确认信息”的界线，同时把枯燥规格拆解成流畅自然的口语长文。</li>
+          <li><strong>全球第 2 的改稿服从度（Steerability）</strong>：在 Agent Arena Index 拿下世界第 2。写到一半批注“语气再亲切点”“多分段少长句”，它的贴合调整能力极其精准。</li>
+        </ul>
+
+        <div class="callout info">
+          <div class="callout-title">👑 终极降维打击：同一个界面，免加价无缝切换 Claude 5.5</div>
+          <p>
+            客观比较各家强项：<strong>海量资料整合写作 + 综合性价比看 Gemini 4 Neon</strong>；单论小说般的细腻情绪与金句语感，依然有不少创作者钟情 <strong>Claude Opus 5.5 / Fable 5.2</strong>。
+            但 Antigravity 最“不讲武德”的设计就在这里：按官方模型表，只要是<strong>付费正式版（非试用期）Google AI Pro 或 Ultra</strong>，在同一个模型下拉菜单里就能<strong>零额外付费直接切出 <code>Claude Sonnet 5.5 (thinking)</code> 与 <code>Claude Opus 5.5 (thinking)</code></strong>！<br />
+            <strong>一手查证 + 万字骨架交给 Neon，开篇导语和情绪文案在同一窗口切给 Claude Opus 5.5 润色</strong>——这种奢侈的黄金流水线，一份 Pro 会员就全包了。
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 4 -->
+      <section class="chapter-section" id="ch4">
+        <div class="chapter-kicker">第 4 章 · CHAPTER 04</div>
+        <h2>用手机远程操控 Antigravity！T3 Code 与官方远程控制两大路线</h2>
+
+        <p>
+          最让人上瘾的体验，莫过于彻底打破“必须守在电脑前”的束缚——出门坐地铁、喝咖啡的间隙，掏出手机就能指挥家里的 AI 干活并点下批准。目前有两条成熟路线可供按需挑选：
+        </p>
+
+        <div class="card-grid-2">
+          <div class="feature-card">
+            <div class="feature-card-head">
+              <span class="feature-card-title">路线 ①：T3 Code（多 Agent 聚合遥控）</span>
+              <span class="feature-badge">免费开源 · 极客最爱</span>
+            </div>
+            <p style="margin-bottom:10px;">
+              由 Theo Browne 团队开源的免费操作台。在家里的电脑安装 T3 Code，经由官方标准协议 <button class="cmd-chip" type="button" data-copy="antigravity-acp">antigravity-acp</button> 挂接 Antigravity；在左侧「Sharing &amp; access」通过 <strong>T3 Connect（免费最多 3 台）</strong>、局域网或 Tailscale 配对手机，用 iOS 免费官方 App「<strong>T3 Code - Remote Claude &amp; more</strong>」（或网页端）即可随时遥控。
+            </p>
+            <ul class="styled-list" style="margin:0;gap:6px;">
+              <li>把 Antigravity、Claude Code、Codex 统统装进<strong>同一个手机 App</strong>，半路随手切换</li>
+              <li>手机上直接看彩色高亮代码变更（Diff），坐地铁单指点击审批与 Commit</li>
+              <li>T3 Code 自带 <code>/btw (/side)</code> 侧边对话，每走一步自动存档，随时一键回滚</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-head">
+              <span class="feature-card-title">路线 ②：Google 官方远程双件套</span>
+              <span class="feature-badge emerald">零条款风险 · 关机也能跑</span>
+            </div>
+            <p style="margin-bottom:10px;">
+              如果担心第三方工具触碰条款，Google 官方自己就给了两把极稳的钥匙：
+            </p>
+            <ul class="styled-list" style="margin:0;gap:8px;">
+              <li><strong>官方 Remote Control</strong>：桌面端进入 <code>Settings → Application</code> 打开「Enable Remote Control」（命令行运行 <button class="cmd-chip" type="button" data-copy="agy remote-control start">agy remote-control start</button>），手机浏览器打开 <code>antigravity.google.com</code> 就能直连家里本地环境；添加到手机主屏幕还能接收完工与待审批推送通知。</li>
+              <li><strong>官方 Remote Agents（Pro/Ultra 个人版专属）</strong>：全云端托管！哪怕<strong>家里电脑彻底关机</strong>，只要绑定 GitHub 和 Google Drive，手机随时随地派发云端任务。</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          选型一句话总结：想用一个 App 统管 Antigravity + Claude Code + Codex 选 <strong>T3 Code</strong>；追求 100% 官方安全感或家里电脑关机也能跑，闭眼选 <strong>官方 Remote Control / Remote Agents</strong>。
+        </p>
+
+        <h3>从世界 500 强到超级个体：真实落地场景长什么样？</h3>
+        <p>
+          在 Google Cloud 官方公告里，大企业的实名反馈已经非常明确：<strong>Accenture（埃森哲）</strong>全球实践负责人 Chetna Sehgal 评价，基于 Gemini Enterprise 铺开后，在严守 Google Cloud 合规治理的同时兼得了研发提速与管控力；而 <strong>AirAsia Group（亚航集团）</strong> 更是直言，已把 Antigravity 2.0 从研发部门推广至<strong>财务、市场、法务、人事全公司日常办公</strong>。
+        </p>
+
+        <div class="card-grid-3">
+          <div class="feature-card">
+            <div class="feature-card-head"><span class="feature-card-title">✍️ 长文写作 &amp; X 运营</span></div>
+            <p>Knowledge Work 纯净界面 + Neon 查证起稿 + 同屏切 Claude 5.5 润色金句与情绪。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-head"><span class="feature-card-title">📑 报告与 PPT 制作</span></div>
+            <p>侧栏 PDF 划词 Quote 精准修订 + Nano Banana 2 快速生成配图与结构图解。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-head"><span class="feature-card-title">🎥 开发 &amp; 短视频创作</span></div>
+            <p>Neon 编写代码可视化演示 + 同一套 Pro 会员里的 Google Flow 产出实拍片与 BGM。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 5 -->
+      <section class="chapter-section" id="ch5">
+        <div class="chapter-kicker">第 5 章 · CHAPTER 05</div>
+        <h2>冷静聊几句实话：短板、避坑点与「协议封号」红线</h2>
+
+        <h3>只吹优点不负责：这 5 个真实痛点下单前一定要看清</h3>
+        <ul class="styled-list">
+          <li><strong>配额与速率限制依然存在</strong>：即便是 Pro，也有「每 5 小时滚动恢复 + 每周总量上限」机制。连续高强度猛跑 XHigh 档 Neon、Claude Opus 5.5 或 <code>/teamwork</code>、<code>/boost</code> 仍会撞墙（超额后可切用另购的 AI 积分，但并非彻底无限量）。</li>
+          <li><strong>免费试用期的模型陷阱</strong>：Claude 5.5 系列与 Hydrogen 要求<strong>非试用期的正式付费 Pro 合约</strong>；Neon 和 Orchestrator 在非指定设备的常规试用期内同样受限。另请留意：<strong>免费档的 Claude 4.6 系列与 GPT-OSS-120b 预定于 2026 年 11 月 30 日下线移除</strong>。</li>
+          <li><strong>桌面端剥离了代码编辑器本体</strong>：Antigravity 2.0 桌面 App 走的是多 Agent 指挥台路线，不再内置重型代码编辑区；习惯一边手敲代码一边对话的开发者，请选用 <strong>Antigravity IDE</strong> 或 VS Code / JetBrains 官方扩展。</li>
+          <li><strong>企业 Google Workspace 账号不享个人黑五福利</strong>：个人版 Google AI 套餐的所有消费级权益（5TB、YouTube、黑五半价等）仅限<strong>个人 Google 账号</strong>，千万别买错到公司域账号上。</li>
+          <li><strong>看清跑分数字的附注口径</strong>：Intelligence Index <code>61</code> 分是开启 <code>xhigh</code> 思考档测得；<code>100 万 Token</code> 上下文是 API 直连规格，Antigravity 客户端内官方标定上限为 <code>512K Token</code>；内部实测“最低幻觉率”也不等于 0% 幻觉，关键结论仍须人工复核。</li>
+        </ul>
+
+        <h3 id="tos-ban">条款第 6 条封号红线：OpenClaw 与 T3 Code 的本质区别</h3>
+        <p>
+          想用 T3 Code 做手机联动的同学，务必先看懂 <strong>Google Antigravity 附加服务条款（第 6 条）</strong>——该条款明令禁止非官方封装套壳、代理转发以及无人值守的自动化 Agent 循环调用。
+          2026 年内确实爆发过一波严打：通过 OpenClaw 等非官方工具把 OAuth Token 倒腾转发出去的账号，大批遭遇 <code>403 PERMISSION_DENIED</code> 甚至封禁（初犯虽有申诉解封案例，再犯则永久封号）。
+        </p>
+
+        <div class="tos-grid">
+          <div class="tos-card safe">
+            <h4>✅ 社区梳理的合规安全边界</h4>
+            <p>
+              面向<strong>单人交互式开发</strong>场景，直接运行 ACP Registry 提供的<strong>官方未改写二进制文件（<code>antigravity-acp</code>）</strong>，沿用原生个人登录认证（<code>oauth-personal</code>）进行标准 JSON-RPC 通信——T3 Code 采用的正是这一合规路径。
+            </p>
+          </div>
+          <div class="tos-card danger">
+            <h4>🚫 踩线必封的违规架构</h4>
+            <p>
+              窃取或提取 OAuth Token 转发到外部代理服务器、自动化多账号轮询切号池、或者把个人低价订阅塞进无人值守的大规模脚本死循环刷量。
+            </p>
+          </div>
+        </div>
+
+        <div class="callout danger">
+          <div class="callout-title">🛡️ 稳妥护号与本机防误删铁律</div>
+          <p>
+            需要提醒的是，社区论坛亦有反馈称“经 T3 Code 调用在触及套餐配额后，不会自动扣除额外购买的 AI 积分”，未来官方收紧第三方口径的风险也并非为零。
+            如果你绝不想让<strong>主力 Google 大号</strong>冒一丁点风险，手机遥控请直接用官方 <strong>Remote Control</strong> 或 <strong>Remote Agents</strong>。<br />
+            同时在本地执行权限上，<strong>切忌随意开启跳过一切确认的 <code>Turbo</code> 模式</strong>，务必坚守三底线：<strong>开启 Terminal Sandbox 沙箱 ＋ 保持危险操作人工审批 ＋ 只在 Git 版本管理目录下放权修改</strong>。
+          </p>
+        </div>
+
+        <h3 id="cheatsheet">⚡ 不迷路！模型与功能选型速查表</h3>
+        <p>收藏这一块，每次开新任务前花 3 秒对照，直接选对最优组合：</p>
+
+        <div class="cheat-controls">
+          <div class="filter-pills" role="group" aria-label="按类别筛选速查表">
+            <button class="filter-pill active" type="button" data-cheat-filter="all">全部 (6)</button>
+            <button class="filter-pill" type="button" data-cheat-filter="model">核心模型</button>
+            <button class="filter-pill" type="button" data-cheat-filter="remote">手机远程</button>
+            <button class="filter-pill" type="button" data-cheat-filter="multi">多智能体</button>
+          </div>
+          <input class="search-input" id="cheatSearch" type="search" placeholder="搜索关键词（如 Neon、省额度、免费）…" aria-label="搜索选型速查表" />
+        </div>
+
+        <div class="cheat-grid" id="cheatGrid">
+          <div class="cheat-item" data-cat="model">
+            <div class="cheat-item-head">
+              <span class="cheat-item-name">Gemini 4 Neon</span>
+              <span class="feature-badge">Pro / Ultra · 日常首选</span>
+            </div>
+            <p>绝对主力全能手。啃厚资料、一手查证写长文、跨多文件编码、代码生成动画，遇到任务先上它（日常开 Medium~High，硬仗切 Extra / xhigh）。</p>
+          </div>
+
+          <div class="cheat-item" data-cat="model">
+            <div class="cheat-item-head">
+              <span class="cheat-item-name">Orchestrator [Neon × Hydrogen]</span>
+              <span class="feature-badge emerald">Pro / Ultra · 省配额神配</span>
+            </div>
+            <p>日常软件开发的性价比天花板。自动让 Neon 管架构设计与终审，Hydrogen 管高速施工和跑测试，配额耐用度翻倍。</p>
+          </div>
+
+          <div class="cheat-item" data-cat="model">
+            <div class="cheat-item-head">
+              <span class="cheat-item-name">Gemini 4 Carbon</span>
+              <span class="feature-badge amber">Ultra / Enterprise · 终极重炮</span>
+            </div>
+            <p>专门用来啃耗时数小时的超重型系统架构设计或大型历史项目迁移，关键时刻掏出的压箱底王牌。</p>
+          </div>
+
+          <div class="cheat-item" data-cat="model">
+            <div class="cheat-item-head">
+              <span class="cheat-item-name">Claude Opus 5.5 / Sonnet 5.5</span>
+              <span class="feature-badge">付费 Pro / Ultra · 零加价</span>
+            </div>
+            <p>主打细腻文案语感、情感润色、高质感文案推敲与前端 UI 精修。在 Antigravity 内免加价直接切换堪称犯规。</p>
+          </div>
+
+          <div class="cheat-item" data-cat="remote">
+            <div class="cheat-item-head">
+              <span class="cheat-item-name">手机远程遥控选型</span>
+              <span class="feature-badge emerald">官方案 vs T3 Code</span>
+            </div>
+            <p>要零封号风险＋电脑关机照常跑，选 <strong>官方 Remote Control / Remote Agents</strong>；要把 Claude Code、Codex 一并收进一个手机 App 统一指挥，选 <strong>T3 Code</strong>。</p>
+          </div>
+
+          <div class="cheat-item" data-cat="multi">
+            <div class="cheat-item-head">
+              <span class="cheat-item-name">四阶多智能体调度</span>
+              <span class="feature-badge">含免费 /swarm</span>
+            </div>
+            <p>后台零活派 <strong>Subagent</strong>；多路并行＋<code>@verifier</code> 验货用 <code>/swarm</code>（<strong>免费版可用</strong>）；疑难深坑用 <code>/boost</code>；多日大改版用 <code>/teamwork</code>。</p>
+          </div>
+        </div>
+        <p id="cheatEmpty" style="display:none;text-align:center;color:var(--text-muted);padding:20px 0;">未找到匹配的速查条目，换个关键词试试吧。</p>
+
+        <p style="margin-top:20px;">
+          接下来的 AI 效率竞赛，早已不是东买一个、西买一个单一模型的时代——谁能以 <strong>Gemini 4 Neon</strong> 为核心，把 <strong>Claude 5.5、Flow、YouTube、5TB、Colab 算力与手机遥控</strong> 拧成一套闭环生态，谁就能彻底甩开差距。
+        </p>
+      </section>
+
+      <!-- CHAPTER 6 -->
+      <section class="chapter-section" id="ch6">
+        <div class="chapter-kicker">第 6 章 · CHAPTER 06</div>
+        <h2>直接复制就能用！实战提示词 3 选 &amp; 今天先做这 3 步</h2>
+
+        <h3 id="prompts">📋 实战提示词 3 选（支持中文精校 / 日文原版切换，一键复制）</h3>
+        <p>下面这 3 套提示词覆盖「深度长文写作」「省额度稳健开发」「不停工并行探索」，直接点击右上角 <strong>复制提示词</strong> 就能粘贴进 Antigravity 开工：</p>
+
+        <!-- Prompt 1 -->
+        <div class="prompt-card" data-prompt-key="p1">
+          <div class="prompt-header">
+            <div class="prompt-title-group">
+              <span class="prompt-num">PROMPT 01</span>
+              <span class="prompt-title">一手信源查证 ＋ 零 AI 味深度长文写作</span>
+            </div>
+            <div class="prompt-actions">
+              <div class="lang-mini-toggle" role="group" aria-label="切换提示词语言">
+                <button class="lang-mini-btn active" type="button" data-lang="zh">中文版</button>
+                <button class="lang-mini-btn" type="button" data-lang="ja">日文原版</button>
+              </div>
+              <button class="copy-btn" type="button"><span>📋</span><span>复制提示词</span></button>
+            </div>
+          </div>
+          <pre class="prompt-body"></pre>
+        </div>
+
+        <!-- Prompt 2 -->
+        <div class="prompt-card" data-prompt-key="p2">
+          <div class="prompt-header">
+            <div class="prompt-title-group">
+              <span class="prompt-num">PROMPT 02</span>
+              <span class="prompt-title">省额度高质开发：先对齐规划再执行（/plan /grill-me）</span>
+            </div>
+            <div class="prompt-actions">
+              <div class="lang-mini-toggle" role="group" aria-label="切换提示词语言">
+                <button class="lang-mini-btn active" type="button" data-lang="zh">中文版</button>
+                <button class="lang-mini-btn" type="button" data-lang="ja">日文原版</button>
+              </div>
+              <button class="copy-btn" type="button"><span>📋</span><span>复制提示词</span></button>
+            </div>
+          </div>
+          <pre class="prompt-body"></pre>
+        </div>
+
+        <!-- Prompt 3 -->
+        <div class="prompt-card" data-prompt-key="p3">
+          <div class="prompt-header">
+            <div class="prompt-title-group">
+              <span class="prompt-num">PROMPT 03</span>
+              <span class="prompt-title">不打断主线深挖备选案（/btw）＋ 质检闭环并行（/swarm）</span>
+            </div>
+            <div class="prompt-actions">
+              <div class="lang-mini-toggle" role="group" aria-label="切换提示词语言">
+                <button class="lang-mini-btn active" type="button" data-lang="zh">中文版</button>
+                <button class="lang-mini-btn" type="button" data-lang="ja">日文原版</button>
+              </div>
+              <button class="copy-btn" type="button"><span>📋</span><span>复制提示词</span></button>
+            </div>
+          </div>
+          <pre class="prompt-body"></pre>
+        </div>
+
+        <h3 id="quickstart">🚀 别只收藏吃灰：现在就花 10 分钟上手这 3 步</h3>
+        <p>
+          2026 年 11 月的 Google Antigravity，已经把「Neon 核心大脑」「3 倍性能增幅专属框架」「免加价 Claude 5.5 ＋ Orchestrator」「Flow / YouTube / 5TB / Colab 全家桶」「T3 Code 与官方手机遥控」五张王牌全部摆上桌面——而且正逢黑五折合月均 1,208 日元（常规也仅 2,900 日元/月）的最佳入场窗口。
+          但看完关掉页面，明天的工作效率并不会自动提升一毫米。不如趁热花 10 分钟完成下面 3 件小事：
+        </p>
+
+        <div class="checklist-panel" data-checklist-group="quickstart-10min">
+          <div class="checklist-head">
+            <span class="checklist-head-title">⏱️ 今日 10 分钟实战打卡（状态自动保存）</span>
+            <span class="checklist-progress-badge">进度 0/3</span>
+          </div>
+
+          <label class="step-check-item">
+            <input class="step-checkbox" type="checkbox" data-step-id="qs-1" />
+            <div class="step-body">
+              <div class="step-title">1. 检查你的 Google One 账号黑五半价资格</div>
+              <p class="step-desc">打开 Google One 套餐管理页面，确认是否弹出 Google AI Pro 年付 50% OFF（14,500 日元）优惠（老户抢先购至 11 月 26 日，新户关注 11 月 27 日前后正式黑五档）。</p>
+            </div>
+          </label>
+
+          <label class="step-check-item">
+            <input class="step-checkbox" type="checkbox" data-step-id="qs-2" />
+            <div class="step-body">
+              <div class="step-title">2. 安装 Antigravity App 或命令行 CLI（agy）</div>
+              <p class="step-desc">先用免费档的 Gemini 3.8 Flash 与 <code>/swarm</code> 零成本上手，亲手感受多智能体并行与内置浏览器的操作节奏。</p>
+              <a class="step-link" href="https://antigravity.google" target="_blank" rel="noopener">↗ 前往官网 antigravity.google</a>
+            </div>
+          </label>
+
+          <label class="step-check-item">
+            <input class="step-checkbox" type="checkbox" data-step-id="qs-3" />
+            <div class="step-body">
+              <div class="step-title">3. 体验一次 /btw 侧边分叉 ＋ 手机 Remote Control 遥控</div>
+              <p class="step-desc">随手抛一个日常任务让它跑起来，中途敲一句 <code>/btw</code> 从侧面插问，同时在设置中打开「Enable Remote Control」，掏出手机浏览器连上去看一眼实时进度。</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="lead-quote">
+          当你亲眼看到：电脑后台 Agent 刷刷干活、右手边 <code>/btw</code> 并行验证方案、出门掏出手机点一下就能给家里干活的搭档放行——那一刻你一定会感叹：<strong>“完了，这下真回不去以前的工作方式了。”</strong>
+        </div>
+
+        <!-- Original Source Appendix (Collapsible) -->
+        <details class="appendix-details">
+          <summary>📎 原文来源与日文原稿末尾附注（原著赠品清单 12 项）</summary>
+          <div class="appendix-inner">
+            <p style="font-size:0.86rem;margin-bottom:10px;">
+              本页面全文依据 2026 年 11 月 23 日日文原稿《最強のAIエージェントGoogle Antigravity【完全網羅】》精校编译并重构为交互式网页版。原稿文末附带了原作者在 LINE 开放群「にくのAI爆速攻略」发放的 12 项 Claude Code 新手参考资料清单，此处如实保留归档以供查考：
+            </p>
+            <div class="bonus-grid">
+              <div>01｜Codex · Claude Code 入门指南</div>
+              <div>02｜即贴即试实用指令 3 条</div>
+              <div>03｜避坑排障速查表 11 项</div>
+              <div>04｜迷你应用开发提示词 50 条</div>
+              <div>05｜图像生成与编辑提示词 50 条</div>
+              <div>06｜X / Threads 自动发布与定时排期教程</div>
+              <div>07｜X 爆款文章标题生成器</div>
+              <div>08｜X 变现路径与收益拆解</div>
+              <div>09｜Claude Code 术语图鉴 60 词</div>
+              <div>10｜CLAUDE.md 起步模板</div>
+              <div>11｜动态图形视频（Motion Graphics）提示词套装</div>
+              <div>12｜Claude Code 入门前 10 天实战挑战</div>
+            </div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin:0;">
+              原文附注领取链接：<a href="https://x.gd/VtPmw" target="_blank" rel="noopener noreferrer">https://x.gd/VtPmw</a>（第三方外部社群链接，按需自行判断访问）。
+            </p>
+          </div>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#top">回到顶部</a>
+      <a href="#pricing">套餐定价</a>
+      <a href="#api-credits">API 额度领取</a>
+      <a href="#cheatsheet">选型速查表</a>
+      <a href="#prompts">实战提示词</a>
+      <a href="docs/guide-zh.md" target="_blank" rel="noopener">查看中文 Markdown</a>
+      <a href="docs/source-ja.md" target="_blank" rel="noopener">查看日文原稿</a>
+    </div>
+    <div>Google Antigravity 完全攻略（2026.11 精校中文交互版）· 托管部署于 GitHub Pages</div>
+  </footer>
+
+  <!-- Floating Controls -->
+  <button class="back-top" id="backTop" type="button" aria-label="返回顶部" title="返回顶部">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
